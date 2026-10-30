@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web бағдарламалау - Электрондық оқулық</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #121824;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      height: 50px;
+      background: #1a2332;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid #2a364f;
+    }
+    .main-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    #flipbook {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .page {
+      background-color: #ffffff;
+      color: #333333;
+      padding: 30px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+    .page-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    footer {
+      height: 50px;
+      background: #1a2332;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      border-top: 1px solid #2a364f;
+    }
+    button {
+      background: #2b3a55;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #3b4e73;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Web бағдарламалау</strong> — Электрондық оқулық</div>
+  </header>
+
+  <div class="main-container">
+    <div id="flipbook">
+      <!-- Беттер JS арқылы жүктеледі -->
+    </div>
+  </div>
+
+  <footer>
+    <button id="prevBtn">❮ Назад</button>
+    <span id="pageInfo">Бет: 1 / 100</span>
+    <button id="nextBtn">Вперед ❯</button>
+  </footer>
+
+  <!-- Парақ аудару дыбысы -->
+  <audio id="flipSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" preload="auto"></audio>
+
+  <!-- 1. PageFlip библиотекасы -->
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  
+  <!-- 2. Деректер файлы -->
+  <script src="book-data.js"></script>
+  
+  <!-- 3. Негізгі логика скрипті -->
+  <script src="book.js"></script>
+</body>
+</html>
